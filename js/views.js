@@ -8,6 +8,17 @@ App.Views.Teams = Backbone.View.extend({
 		}, this);
 
 		return this;
+	},
+	events : {
+		'click .options' : 'sort'
+	},
+
+	sort : function( event ) {
+		var type = $(event.target).attr('data-type');
+		this.collection.sortedBy( type ).sort();
+	},
+	initialize : function() {
+		this.listenTo( this.collection, 'reset', this.render );
 	}
 });
 
@@ -15,8 +26,11 @@ App.Views.Team = Backbone.View.extend({
 	tagName: 'ul class="team-row"',
 
 	template: template('teamTemplate'),
+	//header: template('headerTemplate'),
 
 	render: function() {
+		//this.$el.html( this.header(this.model.toJSON()) );
+		//return this;
 		this.$el.html( this.template(this.model.toJSON()) );
 		return this;
 	}
