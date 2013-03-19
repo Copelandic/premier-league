@@ -1,12 +1,12 @@
-var TeamCollection = Backbone.Collection.extend({
-	model: Team,
+App.Collections.Teams = Backbone.Collection.extend({
+	model: App.Models.Team,
 
 	comparator: function(team) {
 		return -team.get("points");
 	}
 });
 
-var teamCollection = new TeamCollection([
+var teamCollection = new App.Collections.Teams([
 	{
 		name: 'Arsenal',
 		won: 14,

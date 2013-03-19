@@ -1,4 +1,4 @@
-var Team = Backbone.Model.extend({
+App.Models.Team = Backbone.Model.extend({
 	defaults: {
 		name: 'Team Name',
 		won: 0,
