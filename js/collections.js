@@ -1,186 +1,170 @@
 var TeamCollection = Backbone.Collection.extend({
-	model: Team
+	model: Team,
+
+	comparator: function(team) {
+		return -team.get("points");
+	}
 });
 
 var teamCollection = new TeamCollection([
 	{
 		name: 'Arsenal',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 14,
+		drawn: 8,
+		lost: 7,
+		goalsFor: 55,
+		goalsAgainst: 32
 	},
 	{
 		name: 'Aston Villa',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 7,
+		drawn: 9,
+		lost: 14,
+		goalsFor: 31,
+		goalsAgainst: 56
 	},
 	{
 		name: 'Chelsea',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 16,
+		drawn: 7,
+		lost: 6,
+		goalsFor: 58,
+		goalsAgainst: 30
 	},
 	{
 		name: 'Everton',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 12,
+		drawn: 12,
+		lost: 5,
+		goalsFor: 46,
+		goalsAgainst: 35
 	},
 	{
 		name: 'Fulham',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 9,
+		drawn: 9,
+		lost: 11,
+		goalsFor: 40,
+		goalsAgainst: 44
 	},
 	{
 		name: 'Liverpool',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 12,
+		drawn: 9,
+		lost: 9,
+		goalsFor: 57,
+		goalsAgainst: 39
 	},
 	{
 		name: 'Manchester City',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 17,
+		drawn: 8,
+		lost: 4,
+		goalsFor: 51,
+		goalsAgainst: 26
 	},
 	{
 		name: 'Manchester United',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 24,
+		drawn: 2,
+		lost: 3,
+		goalsFor: 69,
+		goalsAgainst: 31
 	},
 	{
 		name: 'Newcastle United',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 9,
+		drawn: 6,
+		lost: 15,
+		goalsFor: 41,
+		goalsAgainst: 52
 	},
 	{
 		name: 'Norwich City',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 7,
+		drawn: 13,
+		lost: 10,
+		goalsFor: 28,
+		goalsAgainst: 46
 	},
 	{
 		name: 'Queens Park Rangers',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 4,
+		drawn: 11,
+		lost: 15,
+		goalsFor: 26,
+		goalsAgainst: 48
 	},
 	{
 		name: 'Reading',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 5,
+		drawn: 8,
+		lost: 17,
+		goalsFor: 35,
+		goalsAgainst: 57
 	},
 	{
 		name: 'Southampton',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 7,
+		drawn: 10,
+		lost: 13,
+		goalsFor: 42,
+		goalsAgainst: 52
 	},
 	{
 		name: 'Stoke City',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 7,
+		drawn: 13,
+		lost: 10,
+		goalsFor: 27,
+		goalsAgainst: 35
 	},
 	{
 		name: 'Sunderland',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 7,
+		drawn: 10,
+		lost: 13,
+		goalsFor: 33,
+		goalsAgainst: 42
 	},
 	{
 		name: 'Swansea City',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 10,
+		drawn: 10,
+		lost: 10,
+		goalsFor: 40,
+		goalsAgainst: 38
 	},
 	{
 		name: 'Tottenham Hotspur',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 16,
+		drawn: 6,
+		lost: 8,
+		goalsFor: 51,
+		goalsAgainst: 37
 	},
 	{
 		name: 'West Bromwich Albion',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 13,
+		drawn: 5,
+		lost: 12,
+		goalsFor: 40,
+		goalsAgainst: 38
 	},
 	{
 		name: 'West Ham United',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 9,
+		drawn: 6,
+		lost: 14,
+		goalsFor: 32,
+		goalsAgainst: 43
 	},
 	{
 		name: 'Wigan Athletic',
-		played: 0,
-		won: 0,
-		drawn: 0,
-		lost: 0,
-		goalsFor: 0,
-		goalsAgainst: 0
+		won: 7,
+		drawn: 6,
+		lost: 16,
+		goalsFor: 35,
+		goalsAgainst: 56
 	}
 ]);
