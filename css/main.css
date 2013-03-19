@@ -1,0 +1,21 @@
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+ul.team-row{
+	list-style-type: none;
+	clear: both;
+}
+
+ul.team-row li{
+	list-style-type: none;
+	float: left;
+	width: 60px;
+	text-align: center;
+}
+
+ul.team-row li.team-name{
+	width: 160px;
+	text-align: left;
+}

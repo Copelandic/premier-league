@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Premier League</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="teams">
+		<ul class="team-row">
+			<li class="team-name">Club</li>
+			<li>Played</li>
+			<li>Won</li>
+			<li>Drawn</li>
+			<li>Lost</li>
+			<li>GF</li>
+			<li>GA</li>
+		</ul>
+	</div>
+
+	<script id="teamTemplate" type="text/template">
+		<li class="team-name"><%= name %></li><li><%= played %></li> <li><%= won %></li> <li><%= drawn %></li> <li><%= lost %></li> <li><%= goalsFor %></li> <li><%= goalsAgainst %></li>
+	</script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/underscore.js"></script>
+	<script src="js/backbone.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/models.js"></script>
+	<script src="js/collections.js"></script>
+	<script src="js/views.js"></script>
+	<script src="js/router.js"></script>
+</body>
+</html>
