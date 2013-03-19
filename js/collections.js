@@ -3,7 +3,21 @@ App.Collections.Teams = Backbone.Collection.extend({
 
 	comparator: function(team) {
 		return -team.get("points");
-	}
+	},
+
+	strategies: {
+        won: function (team) { return -team.get("won"); }, 
+        lost: function (team) { return team.get("lost"); },
+    },
+    changeSort: function (sortProperty) {
+        this.comparator = this.strategies[sortProperty];
+    },
+    initialize: function () {
+    	this.changeSort("lost");
+    	console.log(this.comparator);
+		this.changeSort("won"); 
+		console.log(this.comparator);    
+    }                       
 });
 
 var teamCollection = new App.Collections.Teams([
