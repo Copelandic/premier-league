@@ -1,8 +1,15 @@
 App.Views.Teams = Backbone.View.extend({
 	className: 'teams',
 	container: template('containerTemplate'),
-	
+	header: template('headerTemplate'),
+
+	initialize : function() {
+		this.listenTo( this.collection, 'reset', this.render );
+		this.$el.html( this.header(this.model.toJSON()) );
+	},
+
 	render: function() {
+		this.$el.render( 'container' );
 		this.collection.each(function(team) {
 			var teamView = new App.Views.Team({ model: team });
 			this.$el.append(teamView.render().el);
@@ -17,21 +24,15 @@ App.Views.Teams = Backbone.View.extend({
 	sort : function( event ) {
 		var type = $(event.target).attr('data-type');
 		this.collection.sortedBy( type ).sort();
-	},
-	initialize : function() {
-		this.listenTo( this.collection, 'reset', this.render );
-		this.$el.render( this.container, this.render );
 	}
 });
 
 App.Views.Team = Backbone.View.extend({
-	tagName: 'ul class="team-row"',
+	tagName: 'ul',
+	className: 'team-row',
 	template: template('teamTemplate'),
-	header: template('headerTemplate'),
 
 	render: function() {
-		this.$el.html( this.header(this.model.toJSON()) );
-		return this;
 		this.$el.html( this.template(this.model.toJSON()) );
 		return this;
 	}
