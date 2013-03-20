@@ -1,6 +1,7 @@
 App.Views.Teams = Backbone.View.extend({
-	tagName: 'ul',
-
+	className: 'teams',
+	container: template('containerTemplate'),
+	
 	render: function() {
 		this.collection.each(function(team) {
 			var teamView = new App.Views.Team({ model: team });
@@ -19,18 +20,18 @@ App.Views.Teams = Backbone.View.extend({
 	},
 	initialize : function() {
 		this.listenTo( this.collection, 'reset', this.render );
+		this.$el.render( this.container, this.render );
 	}
 });
 
 App.Views.Team = Backbone.View.extend({
 	tagName: 'ul class="team-row"',
-
 	template: template('teamTemplate'),
 	header: template('headerTemplate'),
 
 	render: function() {
-		//this.$el.html( this.header(this.model.toJSON()) );
-		//return this;
+		this.$el.html( this.header(this.model.toJSON()) );
+		return this;
 		this.$el.html( this.template(this.model.toJSON()) );
 		return this;
 	}
