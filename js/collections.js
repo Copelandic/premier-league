@@ -5,9 +5,10 @@ App.Collections.Teams = Backbone.Collection.extend({
 		return -team.get("points");
 	},
 
-	sort: function(team) {
-    	this.comparator = team.get("name");
-    }                       
+	sortedBy: function(type) {
+    	this.collection.sortedBy(type);
+    	this.collection.sort();
+    }
 });
 
 var teamCollection = new App.Collections.Teams([
