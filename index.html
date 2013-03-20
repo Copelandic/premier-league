@@ -8,25 +8,23 @@
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-	<script id="containerTemplate" type="text/template">
-		<ul class=“team-row”></ul>
+	
+	<script id="headerTemplate" type="text/template">
+		<ul class="team-row">
+			<li id="name" data-type="name" class="team-name option bold">Club</li>
+			<li id="played" data-type="played" class="option bold">Played</li>
+			<li id="won" data-type="won" class="option bold">Won</li>
+			<li id="drawn" data-type="drawn" class="option bold">Drawn</li>
+			<li id="lost" data-type="lost" class="option bold">Lost</li>
+			<li id="goalsFor" data-type="goalsFor" class="option bold">GF</li>
+			<li id="goalsAgainst" data-type="goalsAgainst" class="option bold">GA</li>
+			<li id="goalDifference" data-type="goalDifference" class="option bold">GD</li>
+			<li id="points" data-type="points" class="option bold">Pts</li>
+		</ul>
 	</script>
 	
 	<script id="teamTemplate" type="text/template">
 		<li class="team-name"><%= name %></li><li><%= played %></li> <li><%= won %></li> <li><%= drawn %></li> <li><%= lost %></li> <li><%= goalsFor %></li> <li><%= goalsAgainst %></li><li><%= goalDifference %></li><li><%= points %></li>
-	</script>
-
-	<script id="headerTemplate" type="text/template">
-		<li id="name" data-type="name" class="team-name option bold">Club</li>
-		<li id="played" data-type="played" class="option bold">Played</li>
-		<li id="won" data-type="won" class="option bold">Won</li>
-		<li id="drawn" data-type="drawn" class="option bold">Drawn</li>
-		<li id="lost" data-type="lost" class="option bold">Lost</li>
-		<li id="goalsFor" data-type="goalsFor" class="option bold">GF</li>
-		<li id="goalsAgainst" data-type="goalsAgainst" class="option bold">GA</li>
-		<li id="goalDifference" data-type="goalDifference" class="option bold">GD</li>
-		<li id="points" data-type="points" class="option bold">Pts</li>
 	</script>
 
 	<script src="js/jquery.js"></script>

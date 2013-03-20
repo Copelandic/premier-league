@@ -1,11 +1,9 @@
 App.Views.Teams = Backbone.View.extend({
 	className: 'teams',
-	container: template('containerTemplate'),
 	header: template('headerTemplate'),
 
 	initialize : function() {
 		this.listenTo( this.collection, 'reset', this.render );
-		this.$el.html( this.container );
 		this.$el.html( this.header() );
 	},
 
