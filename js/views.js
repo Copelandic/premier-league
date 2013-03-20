@@ -26,7 +26,7 @@ App.Views.Team = Backbone.View.extend({
 	tagName: 'ul class="team-row"',
 
 	template: template('teamTemplate'),
-	//header: template('headerTemplate'),
+	header: template('headerTemplate'),
 
 	render: function() {
 		//this.$el.html( this.header(this.model.toJSON()) );

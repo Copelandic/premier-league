@@ -19,15 +19,15 @@ App.Models.Team = Backbone.Model.extend({
 	},
 
 	played: function() {
-		return (this.get('won') ) + this.get('drawn') + this.get('lost');
+		return ( Number(this.get('won') + this.get('drawn') + this.get('lost')));
 	},
 
 	points: function() {
-		return (this.get('won') * 3) + this.get('drawn');
+		return ( Number(this.get('won') * 3) + this.get('drawn'));
 	},
 
 	goalDifference: function() {
-		return (this.get('goalsFor') ) - this.get('goalsAgainst');
+		return ( Number(this.get('goalsFor') ) - this.get('goalsAgainst'));
 	}
 });
 
