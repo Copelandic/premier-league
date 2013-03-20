@@ -5,11 +5,11 @@ App.Views.Teams = Backbone.View.extend({
 
 	initialize : function() {
 		this.listenTo( this.collection, 'reset', this.render );
-		this.$el.html( this.header(this.model.toJSON()) );
+		this.$el.html( this.container );
+		this.$el.html( this.header() );
 	},
 
 	render: function() {
-		this.$el.render( 'container' );
 		this.collection.each(function(team) {
 			var teamView = new App.Views.Team({ model: team });
 			this.$el.append(teamView.render().el);
