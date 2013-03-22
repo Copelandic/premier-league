@@ -1,14 +1,18 @@
 App.Collections.Teams = Backbone.Collection.extend({
 	model: App.Models.Team,
 
-	comparator: function(team) {
-		return -team.get("points");
+	initialize : function(){
+	 	this.sortedValue = 'points';
 	},
 
-	sortedBy: function(type) {
-    	this.collection.sortedBy(type);
-    	this.collection.sort();
-    }
+	comparator : function(model) {
+		return -model.get(this.sortedValue);
+	},
+
+	sortedBy : function( val ) {
+		this.sortedValue = val;
+		this.sort();
+	}
 });
 
 var teamCollection = new App.Collections.Teams([

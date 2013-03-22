@@ -21,7 +21,7 @@ App.Views.Teams = Backbone.View.extend({
 
 	sortedBy : function(event) {
 		var type = $(event.target).attr('data-type');
-		this.collection.sort(type);
+		this.collection.sortBy( type );
 	}
 });
 
